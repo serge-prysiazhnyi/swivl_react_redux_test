@@ -1,0 +1,25 @@
+.users-list {
+    list-style: none;
+}
+
+.users-list >li {
+    margin: 10px 0;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+/* .users-list__name {
+
+} */
+
+.users-list__link {
+    margin-left: 15px;
+}
+
+.users-list__avatar-preview {
+    margin-right: 15px;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
