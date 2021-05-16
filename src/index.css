@@ -16,3 +16,7 @@ code {
   margin: 0 auto;
   max-width: 1020px;
 }
+
+.error-massage {
+  color: red;
+}

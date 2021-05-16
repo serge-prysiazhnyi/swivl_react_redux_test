@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, connect } from "react-redux";
-import { fetchUsers } from "../../redux/actions"
+import { fetchUsers } from "../../redux/actions";
 
-import UsersList from "../../components/usersList"
+import UsersList from "../../components/usersList";
+import Spinner from "../../components/spinner";
 
 const UsersPage = ({ fetchUsers }) => {
     const users = useSelector((state) => state.users);
@@ -19,13 +20,13 @@ const UsersPage = ({ fetchUsers }) => {
 
     if (error) {
         return (
-            <div>Something went wrong</div>
+            <div className="error-massage">Something went wrong</div>
         )
     }
 
     if (loading) {
         return (
-            <div>Loading...</div>
+            <Spinner />
         )
     }
 

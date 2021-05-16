@@ -5,6 +5,7 @@ import { useSelector, connect } from "react-redux";
 import { fetchUser } from "../../redux/actions";
 
 import User from "../../components/user";
+import Spinner from "../../components/spinner";
 
 const UserPage = ({ fetchUser }) => {
     let { userId } = useParams();
@@ -20,13 +21,13 @@ const UserPage = ({ fetchUser }) => {
 
     if (error) {
         return (
-            <div>Something went wrong</div>
+            <div className="error-massage">Something went wrong</div>
         )
     }
 
     if (loading) {
         return (
-            <div>Loading...</div>
+            <Spinner />
         )
     }
 
