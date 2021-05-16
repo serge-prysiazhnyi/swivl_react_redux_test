@@ -2,8 +2,7 @@ import { FETCH_USERS, FETCH_USER } from "./types";
 
 const initialState = {
     usersList: [],
-    // ???
-    currentUserData: null
+    currentUserData: {}
 }
 
 export const usersReducer = (state = initialState, actions) => {

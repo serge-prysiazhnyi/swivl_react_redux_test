@@ -1,21 +1,20 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import './App.css';
 import UsersPage from "./pages/usersPage";
 import UserPage from "./pages/userPage";
+import GoBackBtn from "./components/goBackBtn";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <Switch>
           <Route path={`/user/:userId`}>
-            <Link to="/">Home</Link>
+            <GoBackBtn />
             <UserPage />
           </Route>
           <Route path="/">
