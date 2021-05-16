@@ -17,8 +17,11 @@ function App() {
             <GoBackBtn />
             <UserPage />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <UsersPage />
+          </Route>
+          <Route>
+            <div>404 not found</div>
           </Route>
         </Switch>
       </Router>

@@ -1,5 +1,6 @@
 .users-list {
     list-style: none;
+    padding: 0;
 }
 
 .users-list >li {

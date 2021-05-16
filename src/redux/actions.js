@@ -28,7 +28,7 @@ export const hideError = () => ({
     type: HIDE_ERROR
 })
 
-export const fetchUsers = () => {
+export const fetchUsers = (since) => {
     return async (dispatch) => {
         try {
             dispatch(showLoader())
@@ -36,13 +36,17 @@ export const fetchUsers = () => {
             const res = await axios.get(`${basePath}/users`, {
                 params: {
                     per_page: USERS_PER_PAGE,
+                    since,
                     username: process.env.REACT_APP_GITHUB_TOKEN || ""
                 }
             })
 
             dispatch({
                 type: FETCH_USERS,
-                payload: res.data
+                payload: {
+                    usersList: res.data,
+                    since
+                }
             })
 
             dispatch(hideLoader())
