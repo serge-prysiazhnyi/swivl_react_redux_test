@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const User = ({ userData = {} }) => {
     const {
@@ -48,6 +49,21 @@ const User = ({ userData = {} }) => {
             )}
         </div>
     )
+}
+
+User.propTypes = {
+    userData: PropTypes.shape({
+        avatar_url: PropTypes.string,
+        name: PropTypes.string,
+        followers: PropTypes.number,
+        following: PropTypes.number,
+        created_at: PropTypes.string,
+        company: PropTypes.string,
+        email: PropTypes.string,
+        location: PropTypes.string,
+        blog: PropTypes.string,
+        bio: PropTypes.string
+    })
 }
 
 export default User;

@@ -9,8 +9,7 @@ import {
     FETCH_USER,
 } from "./types";
 
-const basePath = "https://api.github.com";
-const USERS_PER_PAGE = 100;
+import { basePath, USERS_PER_PAGE } from "../constants";
 
 export const showLoader = () => ({
     type: SHOW_LOADER

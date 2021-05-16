@@ -7,14 +7,18 @@
     padding-left: 25px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-/* .users-list__name {
+.users-list__router-link {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
 
-} */
-
-.users-list__link {
+.users-list__external-link {
     margin-left: 15px;
+    margin-right: 25px;
 }
 
 .users-list__avatar-preview {
