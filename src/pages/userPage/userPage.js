@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, connect } from "react-redux";
@@ -8,14 +9,14 @@ import User from "../../components/user";
 import Spinner from "../../components/spinner";
 
 const UserPage = ({ fetchUser }) => {
-    let { userId } = useParams();
+    let { userLogin } = useParams();
     const users = useSelector((state) => state.users);
     const app = useSelector((state) => state.app);
     const { loading, error } = app;
     const { currentUserData } = users;
 
     useEffect(() => {
-        fetchUser(userId);
+        fetchUser(userLogin);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -38,6 +39,10 @@ const UserPage = ({ fetchUser }) => {
 
 const mapDispatchToProps = {
     fetchUser
+}
+
+UserPage.propTypes = {
+    fetchUser: PropTypes.func
 }
 
 export default connect(null, mapDispatchToProps)(UserPage);

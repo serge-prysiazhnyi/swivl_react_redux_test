@@ -13,7 +13,7 @@ function App() {
     <div className="container">
       <Router>
         <Switch>
-          <Route path={`/user/:userId`}>
+          <Route path={`/user/:userLogin`}>
             <GoBackBtn />
             <UserPage />
           </Route>

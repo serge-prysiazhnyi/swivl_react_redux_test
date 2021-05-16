@@ -33,12 +33,10 @@ export const fetchUsers = () => {
         try {
             dispatch(showLoader())
 
-            console.log("fetchUsers");
-
             const res = await axios.get(`${basePath}/users`, {
                 params: {
                     per_page: USERS_PER_PAGE,
-                    username: process.env.REACT_APP_GITHUB_TOKEN
+                    username: process.env.REACT_APP_GITHUB_TOKEN || ""
                 }
             })
 
@@ -57,16 +55,16 @@ export const fetchUsers = () => {
     }
 }
 
-export const fetchUser = (id) => {
+export const fetchUser = (userLogin) => {
     return async (dispatch) => {
         try {
             dispatch(showLoader())
 
-            const res = await await axios.get(`${basePath}/users/${id}`, {
-                params: {}
+            const res = await await axios.get(`${basePath}/users/${userLogin}`, {
+                params: {
+                    username: process.env.REACT_APP_GITHUB_TOKEN || ""
+                }
             })
-
-            console.log("fetchUser res")
 
             dispatch({
                 type: FETCH_USER,
@@ -76,6 +74,7 @@ export const fetchUser = (id) => {
             dispatch(hideLoader())
         }
         catch (error) {
+            console.log("catch", error);
             dispatch(hideLoader())
             dispatch(showError(error))
         }

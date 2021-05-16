@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from 'prop-types';
 import { useSelector, connect } from "react-redux";
 import { fetchUsers } from "../../redux/actions";
 
@@ -39,6 +40,10 @@ const UsersPage = ({ fetchUsers }) => {
 
 const mapDispatchToProps = {
     fetchUsers
+}
+
+UsersPage.propTypes = {
+    fetchUser: PropTypes.func
 }
 
 export default connect(null, mapDispatchToProps)(UsersPage);

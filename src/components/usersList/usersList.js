@@ -8,9 +8,9 @@ const UsersList = ({ usersList = [] }) => {
     return (
         <ul className="users-list">
             {usersList && (
-                usersList.map(({ id, login, html_url }) => (
+                usersList.map(({ id, login, html_url, name }) => (
                     <li key={id}>
-                        <Link to={`/user/${id}`} className="users-list__router-link">
+                        <Link to={`/user/${login}`} className="users-list__router-link">
                             <img className="users-list__avatar-preview" src={`${html_url}.png?size=100`} alt="" />
                             <span className="users-list__name">login: {login}</span>
                         </Link>
