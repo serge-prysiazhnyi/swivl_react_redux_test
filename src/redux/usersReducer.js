@@ -3,7 +3,7 @@ import { FETCH_USERS, FETCH_USER } from "./types";
 const initialState = {
     usersList: [],
     // ???
-    currentUser: null
+    currentUserData: null
 }
 
 export const usersReducer = (state = initialState, actions) => {
@@ -13,7 +13,7 @@ export const usersReducer = (state = initialState, actions) => {
             return {...state, usersList: actions.payload}
 
         case FETCH_USER:
-            return {...state, currentUser: actions.payload}
+            return {...state, currentUserData: actions.payload}
 
         default:
             return state

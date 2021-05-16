@@ -30,12 +30,11 @@ export const hideError = () => ({
 })
 
 export const fetchUsers = () => {
-
-    console.log("process.env", );
-
     return async (dispatch) => {
         try {
             dispatch(showLoader())
+
+            console.log("fetchUsers");
 
             const res = await axios.get(`${basePath}/users`, {
                 params: {
@@ -68,11 +67,11 @@ export const fetchUser = (id) => {
                 params: {}
             })
 
-            console.log("fetchUser res", res)
+            console.log("fetchUser res")
 
             dispatch({
                 type: FETCH_USER,
-                payload: res
+                payload: res.data
             })
 
             dispatch(hideLoader())

@@ -1,10 +1,28 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import './App.css';
-import UsersList from "./components/usersList";
+import UsersPage from "./pages/usersPage";
+import UserPage from "./pages/userPage";
 
 function App() {
   return (
     <div className="App">
-      <UsersList />
+      <Router>
+        <Switch>
+          <Route path={`/user/:userId`}>
+            <Link to="/">Home</Link>
+            <UserPage />
+          </Route>
+          <Route path="/">
+            <UsersPage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
